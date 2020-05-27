@@ -56,5 +56,5 @@ lunch, dessert, starter but '" + recipe_type + "' found.\n\n")
 
     def add_recipe(self, recipe):
         """Add a recipe to the book and update last_update"""
-        self.recipes_list.update(recipe)
+        self.recipes_list[recipe.reci_t].append(recipe)
         self.last_update = datetime.now()

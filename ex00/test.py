@@ -29,3 +29,9 @@ book.get_recipe_by_name("salad")
 book.get_recipe_by_name("salad4")
 book.get_recipes_by_types("lunch")
 book.get_recipes_by_types("lunch3")
+
+viande2 = Recipe("viande2", 4, 45, ingr5,
+                 "Real beefsteack with sauce and salts", "lunch")
+
+book.add_recipe(viande2)
+book.get_recipes_by_types("lunch")
