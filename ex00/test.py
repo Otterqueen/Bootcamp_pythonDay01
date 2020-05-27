@@ -2,14 +2,22 @@ from book import Book
 from recipe import Recipe
 from datetime import datetime
 
-ingr = ["ham", "cheese", "miam"]
-cake = Recipe("cake", 4, 12, ingr, "lol", "lunch")
-cake_au_choc = Recipe("cake au choc", 3, 10, ingr, "lol", "lunch")
-salad = Recipe("salad", 3, 10, ingr, "je n'aime pas la salade", "lunch")
-pain = Recipe("pain", 3, 10, ingr, "lol", "lunch")
-pate = Recipe("pate", 3, 10, ingr, "lol", "lunch")
-viande = Recipe("viande", 3, 10, ingr, "lol", "lunch")
-recipes_list = {"lunch":[pate, viande], "dessert":[cake, cake_au_choc], "starter":[salad, pain]}
+ingr = ["ham", "cheese", "bread"]
+ingr2 = ["flour", "chocolate", "eggs"]
+ingr3 = ["flour", "yeast", "water"]
+ingr4 = ["pasta", "salsa", "peperoni"]
+ingr5 = ["beef", "butter", "pepper"]
+
+cake = Recipe("cake", 4, 12, ingr2, "Chocolate cake with baking", "dessert")
+cake_au_choc = Recipe("cake au choc", 3, 10, ingr2,
+                      "Chocolate cake without baking", "dessert")
+salad = Recipe("salad", 3, 10, ingr, "je n'aime pas la salade", "starter")
+pain = Recipe("pain", 5, 120, ingr3, "bread homeamade", "starter")
+pate = Recipe("pate", 2, 15, ingr4, "Vera pasta from Italy", "lunch")
+viande = Recipe("viande", 4, 45, ingr5, "Real beefsteack with sauce", "lunch")
+
+recipes_list = {"lunch": [pate, viande],
+                "dessert": [cake, cake_au_choc], "starter": [salad, pain]}
 
 
 to_print = str(cake)
@@ -18,25 +26,6 @@ print(to_print)
 book = Book("name", datetime.now(), datetime.now(), recipes_list)
 
 book.get_recipe_by_name("salad")
+book.get_recipe_by_name("salad4")
 book.get_recipes_by_types("lunch")
-
-
-
-# i = datetime.now()
-# if type(i) == datetime:
-#     print("oui", type(i))
-# else:
-#     print("non", type(i))
-
-# print(recipes_list.keys())
-
-# if ("lunch" not in recipes_list.keys()) or ("dessert" not in recipes_list.keys()) or ("starter" not in recipes_list.keys()):
-#     print("Non")
-# else:
-#     print("Vouiiii")
-
-# for key in recipes_list.keys():
-#     if (key not in ["lunch", "dessert", "starter"]):
-#         print("Non")
-#     else:
-#         print("Vouiiii")
+book.get_recipes_by_types("lunch3")
